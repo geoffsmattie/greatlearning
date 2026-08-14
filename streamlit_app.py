@@ -77,7 +77,7 @@ if submitted:
     }
     input_data = pd.DataFrame([sample])
     prediction = model.predict(input_data)[0]
-    st.success(f"### Predicted Product Store Sales Total: ₹{prediction:,.2f}")
+    st.success(f"### Predicted Product Store Sales Total: ${prediction:,.2f}")
 
 st.divider()
 st.caption(
