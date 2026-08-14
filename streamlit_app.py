@@ -1,13 +1,9 @@
 """
-SuperKart Sales Forecasting — live app.
+SuperKart Sales Forecasting - live app.
 
-This is the single, self-contained app deployed live on Streamlit Community
-Cloud (free, no credit card required). It loads the trained model pipeline
-directly and runs inference in-process, so it doesn't depend on a separate
-backend service being online.
-
-(See /backend and /frontend for the original two-tier Flask API + Streamlit
-UI design from the notebook, kept for reference / local Docker use.)
+Self-contained Streamlit app: loads the trained model pipeline directly and
+runs inference in-process, so it doesn't depend on a separate backend
+service being online. This is the file Streamlit Community Cloud runs.
 """
 import os
 
@@ -25,8 +21,8 @@ def load_model():
 
 model = load_model()
 
-st.set_page_config(page_title="SuperKart Sales Predictor", page_icon="🛒")
-st.title("🛒 SuperKart Sales Predictor")
+st.set_page_config(page_title="SuperKart Sales Predictor", page_icon="\U0001F6D2")
+st.title("\U0001F6D2 SuperKart Sales Predictor")
 st.write(
     "Predict the total sales revenue for a product at a given store, "
     "using a Gradient Boosting model trained on SuperKart's historical sales data."
@@ -82,5 +78,5 @@ if submitted:
 st.divider()
 st.caption(
     "Model: Gradient Boosting Regressor (hyperparameter-tuned via GridSearchCV) "
-    "trained on the SuperKart dataset. Source: github.com/geoffsmattie/greatlearning"
+    "trained on the SuperKart dataset."
 )

@@ -1,3 +1,8 @@
+# Version ranges (not exact pins) here on purpose: Streamlit Community Cloud's
+# default Python version changes over time (currently 3.13), and some exact
+# versions below don't have prebuilt installers for newer Python releases,
+# which silently breaks the deploy. scikit-learn is pinned exactly since it
+# must match the version that serialized best_superkart_model.joblib.
 streamlit>=1.43.2
 pandas>=2.2.3,<3
 numpy>=2.1.3,<3

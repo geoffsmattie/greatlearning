@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperKart Sales Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SuperKart Sales Predictor</h1>
+        <form id="predictionForm">
+            <label for="Product_Weight">Product Weight:</label>
+            <input type="number" id="Product_Weight" name="Product_Weight" step="0.01" value="12.66" required>
+
+            <label for="Product_Sugar_Content">Product Sugar Content:</label>
+            <select id="Product_Sugar_Content" name="Product_Sugar_Content" required>
+                <option value="Low Sugar">Low Sugar</option>
+                <option value="Regular">Regular</option>
+                <option value="No Sugar">No Sugar</option>
+            </select>
+
+            <label for="Product_Allocated_Area">Product Allocated Area:</label>
+            <input type="number" id="Product_Allocated_Area" name="Product_Allocated_Area" step="0.001" value="0.027" required>
+
+            <label for="Product_MRP">Product MRP:</label>
+            <input type="number" id="Product_MRP" name="Product_MRP" step="0.01" value="117.08" required>
+
+            <label for="Store_Size">Store Size:</label>
+            <select id="Store_Size" name="Store_Size" required>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Small">Small</option>
+            </select>
+
+            <label for="Store_Location_City_Type">Store Location City Type:</label>
+            <select id="Store_Location_City_Type" name="Store_Location_City_Type" required>
+                <option value="Tier 1">Tier 1</option>
+                <option value="Tier 2">Tier 2</option>
+                <option value="Tier 3">Tier 3</option>
+            </select>
+
+            <label for="Store_Type">Store Type:</label>
+            <select id="Store_Type" name="Store_Type" required>
+                <option value="Supermarket Type2">Supermarket Type2</option>
+                <option value="Departmental Store">Departmental Store</option>
+                <option value="Supermarket Type1">Supermarket Type1</option>
+                <option value="Food Mart">Food Mart</option>
+            </select>
+
+            <label for="Product_Id_char">Product ID Character (FD, NC, DR):</label>
+            <select id="Product_Id_char" name="Product_Id_char" required>
+                <option value="FD">FD</option>
+                <option value="NC">NC</option>
+                <option value="DR">DR</option>
+            </select>
+
+            <label for="Store_Age_Years">Store Age (Years):</label>
+            <input type="number" id="Store_Age_Years" name="Store_Age_Years" value="16" required>
+
+            <label for="Product_Type_Category">Product Type Category:</label>
+            <select id="Product_Type_Category" name="Product_Type_Category" required>
+                <option value="Non Perishables">Non Perishables</option>
+                <option value="Perishables">Perishables</option>
+            </select>
+
+            <button type="submit">Predict Sales</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

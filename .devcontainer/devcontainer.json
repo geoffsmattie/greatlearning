@@ -1,7 +1,7 @@
 {
   "name": "Flask + Streamlit",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "postCreateCommand": "pip install flask streamlit",
+  "postCreateCommand": "pip install -r backend_files/requirements.txt",
   "forwardPorts": [5000, 8501],
   "portsAttributes": {
     "5000": { "label": "Flask", "onAutoForward": "notify" },
