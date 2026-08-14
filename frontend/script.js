@@ -6,7 +6,7 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
     const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => {
-        // Convert numeric fields to numbers
+
         if (['Product_Weight', 'Product_Allocated_Area', 'Product_MRP', 'Store_Age_Years'].includes(key)) {
             data[key] = parseFloat(value);
         } else {
@@ -14,12 +14,8 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
         }
     });
 
-    // IMPORTANT: Replace this with wherever your backend/ Flask API ends up
-    // running (e.g. a Render.com free web service), or leave it pointing at
-    // localhost for local testing. Note: the live app deployed in the
-    // "Deployment - Live App" section below is a self-contained Streamlit
-    // app that does not use this HTML/JS frontend at all.
-    const API_URL = 'http://127.0.0.1:7860/v1/predict'; // Default for local Flask app via gunicorn
+
+    const API_URL = 'http://127.0.0.1:7860/v1/predict';
 
     try {
         const response = await fetch(API_URL, {
